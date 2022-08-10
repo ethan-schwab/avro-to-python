@@ -35,7 +35,9 @@ def _record_file(file: File, item: dict, queue: List[dict]) -> None:
     """
     references = []
     for field in item['fields']:
-        print(f"field: ${field}")
+
+        if(field['name'] == 'ethanContentType'):
+            print(f"field: ${field}")
         fieldtype = _get_field_type(
             field=field,
             references=references
