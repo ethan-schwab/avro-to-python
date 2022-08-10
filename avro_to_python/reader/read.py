@@ -49,7 +49,7 @@ class AvscReader(object):
         # initialize cental object
         self.obj = {}
         self.file_tree = None
-
+        print("helooooooo reading now! ")
         if directory:
             if os.path.isfile(directory):
                 raise OSError(f'{directory} is a file!')
