@@ -40,8 +40,10 @@ def _enum_field(field: dict,
         Field
     """
     field['type']['namespace'] = _get_namespace(obj=field['type'], parent_namespace=parent_namespace)
+    print(f"references before adding anything: ${references}")
     print(f"creating namespace for enum ${field} with parent_namespace ${parent_namespace}. setting to ${field['type']['namespace']}")
     reference = _create_reference(field['type'])
+    print(f"reference after creating reference: ${reference}")
     references.append(reference)
 
     queue.append(field['type'])
