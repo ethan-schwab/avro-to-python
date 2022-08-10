@@ -35,7 +35,7 @@ def _record_file(file: File, item: dict, queue: List[dict]) -> None:
     """
     references = []
     for field in item['fields']:
-
+        print(f"field: ${field}")
         fieldtype = _get_field_type(
             field=field,
             references=references
@@ -68,6 +68,7 @@ def _record_file(file: File, item: dict, queue: List[dict]) -> None:
 
         # nested complex record
         elif fieldtype == 'enum':
+            print(f"found enum for field ${field}")
             field = _enum_field(
                 field=field,
                 parent_namespace=_get_namespace(field['type'], file.namespace),
